@@ -22,7 +22,7 @@
 / {
 	#address-cells = <0x2>;
 	#size-cells = <0x2>;
-	model = "Qualcomm Technologies, Inc. IPQ6018/AP-CP03-C1";
+	model = "ZN M2";
 	compatible = "qcom,ipq6018-ap-cp03-c1", "qcom,ipq6018";
 	qcom,msm-id = <0x192 0x0>;
 	interrupt-parent = <&intc>;
