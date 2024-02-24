@@ -500,7 +500,6 @@ platform_do_upgrade() {
 	qcom,ipq6018-ap-cp01-c4 |\
 	qcom,ipq6018-ap-cp01-c5 |\
 	qcom,ipq6018-ap-cp02-c1 |\
-	qcom,ipq6018-ap-cp03-c1 |\
 	qcom,ipq6018-db-cp01 |\
 	qcom,ipq6018-db-cp02)
 		for sec in $(print_sections $1); do
@@ -526,6 +525,11 @@ platform_do_upgrade() {
 		platform_version_upgrade
 
 		erase_emmc_config
+		return 0;
+		;;
+	qcom,ipq6018-ap-cp03-c1)
+		CI_ROOTPART="rootfs"
+		nand_do_upgrade "$1"
 		return 0;
 		;;
 	esac
